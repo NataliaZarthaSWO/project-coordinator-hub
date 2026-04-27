@@ -1,4 +1,4 @@
-# Resumen ejecutivo IKOM
+# Resumen ejecutivo EKOM
 
 - Proyecto: Gama Leasing Operativo SpA | Modern SecOps
 - Periodo: 2026-04-27
@@ -6,7 +6,7 @@
 
 ## Avances
 
-- Se realizo la reunion de IKOM para alinear la coordinacion operativa del workshop.
+- Se realizo la reunion de EKOM para alinear la coordinacion operativa del workshop.
 - Se confirmo que el workshop corresponde a una actividad de preventa.
 - Se identificaron los insumos de gestion requeridos en SharePoint: project plan, exportable a Excel, timecards alineados al project plan y resource plan con forecast semanal.
 - Se definieron acciones iniciales para habilitar la primera sesion tecnica con licencias trial internas y contacto tecnico del cliente.
