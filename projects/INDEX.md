@@ -4,11 +4,11 @@
 
 Usa este formato:
 
-`CL-PRJ-XXXXX-nombre-cliente-nombre-proyecto-YYYY-MM-DD`
+`nombre-cliente-nombre-proyecto-YYYY-MM-DD`
 
 Ejemplo:
 
-`CL-PRJ-500706-gama-leasing-operativo-spa-modern-secops-2026-07-08`
+`gama-leasing-operativo-spa-modern-secops-2026-07-08`
 
 ## Lista
 
