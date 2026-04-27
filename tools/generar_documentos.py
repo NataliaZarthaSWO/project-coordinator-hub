@@ -22,6 +22,7 @@ from pathlib import Path
 from docx import Document
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+import mammoth
 from pptx import Presentation
 from pptx.util import Inches, Pt as PPtPt
 from pptx.dml.color import RGBColor as PPTRGBColor
@@ -67,6 +68,19 @@ def leer_horas(project_path: Path) -> list:
     return rows
 
 
+def docx_a_html(docx_path: Path):
+    """Convierte un DOCX a HTML para previsualizar en el navegador."""
+    out = docx_path.with_suffix(".html")
+    with open(docx_path, "rb") as fh:
+        result = mammoth.convert_to_html(fh)
+    html = f"""<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>body{{font-family:Calibri,Arial,sans-serif;max-width:860px;margin:40px auto;padding:20px;color:#1f2937}}
+h1,h2{{color:#1F487E}}table{{border-collapse:collapse;width:100%}}td,th{{border:1px solid #ccc;padding:8px}}</style>
+</head><body>{result.value}</body></html>"""
+    out.write_text(html, encoding="utf-8")
+    print(f"  Preview HTML: {out}")
+
+
 # ── WORD: MINUTA ─────────────────────────────────────────────────────────────
 
 def generar_minuta(project_path: Path, output_path: Path):
@@ -106,6 +120,7 @@ def generar_minuta(project_path: Path, output_path: Path):
     out = output_path / f"{date.today()}-minuta.docx"
     doc.save(out)
     print(f"Minuta guardada: {out}")
+    docx_a_html(out)
 
 
 # ── WORD: RESUMEN EJECUTIVO ──────────────────────────────────────────────────
@@ -154,6 +169,7 @@ def generar_resumen(project_path: Path, output_path: Path):
     out = output_path / f"{date.today()}-resumen-ejecutivo.docx"
     doc.save(out)
     print(f"Resumen guardado: {out}")
+    docx_a_html(out)
 
 
 # ── PPTX: PRESENTACION EJECUTIVA ─────────────────────────────────────────────
