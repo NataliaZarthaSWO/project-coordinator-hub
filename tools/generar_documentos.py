@@ -16,6 +16,7 @@ Tipos disponibles:
 import argparse
 import os
 import csv
+import zipfile
 from datetime import date
 from pathlib import Path
 
@@ -29,11 +30,16 @@ from pptx.dml.color import RGBColor as PPTRGBColor
 
 PROJECTS_DIR = Path(__file__).parent.parent / "projects"
 OUTPUTS_DIR = Path(__file__).parent.parent / "outputs"
+TEMPLATES_DIR = Path(__file__).parent.parent / "templates"
+SOW_WORD_TEMPLATE = TEMPLATES_DIR / "plantilla-swo.dotx"
+SOW_PPT_TEMPLATE = TEMPLATES_DIR / "plantilla-swo.pptx"
 
 BRAND_DARK = RGBColor(0x1F, 0x48, 0x7E)     # azul oscuro
 BRAND_ACCENT = RGBColor(0x00, 0xA9, 0xE0)   # azul claro
+BRAND_LIGHT = RGBColor(0xF3, 0xF7, 0xFA)
 PPT_DARK = PPTRGBColor(0x1F, 0x48, 0x7E)
 PPT_ACCENT = PPTRGBColor(0x00, 0xA9, 0xE0)
+PPT_LIGHT = PPTRGBColor(0xF3, 0xF7, 0xFA)
 
 
 def find_project(nombre_parcial: str) -> Path:
@@ -79,6 +85,19 @@ h1,h2{{color:#1F487E}}table{{border-collapse:collapse;width:100%}}td,th{{border:
 </head><body>{result.value}</body></html>"""
     out.write_text(html, encoding="utf-8")
     print(f"  Preview HTML: {out}")
+
+
+def crear_docx_desde_dotx(dotx_path: Path, docx_path: Path):
+    """Copia una plantilla DOTX a DOCX editable para python-docx."""
+    with zipfile.ZipFile(dotx_path, "r") as zin, zipfile.ZipFile(docx_path, "w") as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if item.filename == "[Content_Types].xml":
+                data = data.replace(
+                    b"application/vnd.openxmlformats-officedocument.wordprocessingml.template.main+xml",
+                    b"application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
+                )
+            zout.writestr(item, data)
 
 
 # ── WORD: MINUTA ─────────────────────────────────────────────────────────────
@@ -129,8 +148,15 @@ def generar_resumen(project_path: Path, output_path: Path):
     nombre_proyecto = project_path.name
     tareas = leer_seguimiento(project_path)
     horas = leer_horas(project_path)
+    out = output_path / f"{date.today()}-resumen-ejecutivo.docx"
 
-    doc = Document()
+    if SOW_WORD_TEMPLATE.exists():
+        crear_docx_desde_dotx(SOW_WORD_TEMPLATE, out)
+        doc = Document(str(out))
+        print(f"Usando plantilla Word SOW: {SOW_WORD_TEMPLATE}")
+    else:
+        doc = Document()
+        print("Plantilla Word SOW no encontrada; se genera documento base.")
 
     titulo = doc.add_heading("Resumen Ejecutivo", level=0)
     titulo.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -166,7 +192,6 @@ def generar_resumen(project_path: Path, output_path: Path):
 
     doc.add_paragraph(f"\nDocumento generado el {date.today()} por Project Coordinator Hub")
 
-    out = output_path / f"{date.today()}-resumen-ejecutivo.docx"
     doc.save(out)
     print(f"Resumen guardado: {out}")
     docx_a_html(out)
@@ -179,12 +204,42 @@ def generar_presentacion(project_path: Path, output_path: Path):
     tareas = leer_seguimiento(project_path)
 
     prs = Presentation()
+    print("Generando presentacion liviana con estilo SoftwareOne.")
+
     prs.slide_width = Inches(13.33)
     prs.slide_height = Inches(7.5)
 
     def add_slide(layout_idx=6):
-        layout = prs.slide_layouts[layout_idx]
-        return prs.slides.add_slide(layout)
+        safe_idx = layout_idx if layout_idx < len(prs.slide_layouts) else len(prs.slide_layouts) - 1
+        layout = prs.slide_layouts[safe_idx]
+        slide = prs.slides.add_slide(layout)
+
+        background = slide.background.fill
+        background.solid()
+        background.fore_color.rgb = PPT_LIGHT
+
+        top_band = slide.shapes.add_shape(
+            1, Inches(0), Inches(0), prs.slide_width, Inches(0.35)
+        )
+        top_band.fill.solid()
+        top_band.fill.fore_color.rgb = PPT_DARK
+        top_band.line.fill.background()
+
+        accent_band = slide.shapes.add_shape(
+            1, Inches(0), Inches(0.35), Inches(3.2), Inches(0.08)
+        )
+        accent_band.fill.solid()
+        accent_band.fill.fore_color.rgb = PPT_ACCENT
+        accent_band.line.fill.background()
+
+        footer = slide.shapes.add_textbox(Inches(0.6), Inches(7.0), Inches(12.0), Inches(0.3))
+        fp = footer.text_frame.paragraphs[0]
+        fr = fp.add_run()
+        fr.text = "SoftwareOne | Statement of Work"
+        fr.font.size = PPtPt(10)
+        fr.font.color.rgb = PPT_DARK
+
+        return slide
 
     def titulo_slide(slide, titulo, subtitulo=""):
         txBox = slide.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(12), Inches(1.2))
