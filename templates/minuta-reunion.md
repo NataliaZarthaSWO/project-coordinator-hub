@@ -1,35 +1,28 @@
-# Minuta de reunion
+# Minuta - [Tipo de sesión]
 
-Muy buenos dias, equipo:
+- **Cliente:**
+- **Proyecto:**
+- **Fecha:**
+- **Tipo de sesión:**
+- **Contacto cliente:**
+- **Participantes:**
 
-El dia de hoy realizamos nuestra sesion, en la cual revisamos los siguientes puntos a alto nivel.
-
-- Proyecto:
-- Fecha:
-- Participantes:
-- Objetivo:
+---
 
 ## Temas tratados
 
+### 1.
 -
 
-## Pendientes y compromisos
+### 2.
+-
 
-| Tarea | Responsable | Fecha compromiso | Estado |
-|---|---|---|---|
-|  |  |  |  |
-|  |  |  |  |
+---
 
-## Acuerdos
+## Próximos pasos
 
-- [ ] Acuerdo | Responsable | Fecha
+- [ ] Acción | Responsable | Fecha
 
-## Riesgos/Bloqueos
+---
 
-- Item | Impacto | Mitigacion | Responsable
-
-## Proximos pasos
-
-- [ ] Paso | Responsable | Fecha
-
-Quedo atenta(o) a cualquier comentario o ajuste.
+Quedo atenta a cualquier comentario o ajuste.
