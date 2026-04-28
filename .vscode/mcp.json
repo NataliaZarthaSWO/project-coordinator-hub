@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "knowledge-base": {
+      "url": "${BC_MCP_URL}",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${BC_API_TOKEN}"
+      }
+    }
+  }
+}

@@ -36,7 +36,7 @@ Este repositorio te ayuda a:
 Para cargar un proyecto nuevo:
 
 1. Crea una carpeta dentro de `projects/` con formato:
-	`CL-PRJ-XXXXX-nombre-cliente-nombre-proyecto-YYYY-MM-DD`
+       `CL-PRJ-XXXXX-nombre-cliente-nombre-proyecto-YYYY-MM-DD`
 2. Copia dentro los insumos en `inbox/` y luego ordenalos en `fuentes/`.
 3. Trabaja minutas, resumenes, tareas y horas desde esa carpeta.
 
@@ -60,3 +60,57 @@ Cuando hables con el agente, agrega esta linea al final de cada solicitud:
 ## Resultado esperado
 
 Con esta base tendras un asistente operativo para coordinacion de proyectos con informacion organizada, salida estandar y menor tiempo de gestion.
+
+---
+
+## Nuevo agente agregado: Agent-IngestorBC
+
+Tambien se incorporo un agente para carga masiva de documentos a Base de Conocimiento.
+
+- Definicion del agente: `.github/agents/AgentIngestorBC.agent.md`
+- Variables de entorno: `.github/.env` y `.github/env.example`
+- Configuracion MCP: `.vscode/mcp.json`
+
+### Que hace
+
+Procesa y sube documentos de multiples formatos mediante MCP:
+
+- Office: `.pdf`, `.docx`, `.pptx`, `.xlsx` (y variantes)
+- Tabulares y texto: `.csv`, `.txt`, `.html`
+- Estructurados y transcripciones: `.json`, `.xml`, `.vtt`, `.srt`
+- Imagenes: `.png`, `.jpg` (con OCR)
+
+Flujo principal:
+
+1. Lee configuracion (cliente, proyecto y tipo de documento).
+2. Transforma documentos a Markdown con skills especializadas.
+3. Infiere tipo de documento cuando no viene definido.
+4. Sube archivos al MCP con metadatos.
+5. Entrega reporte final por documento.
+
+### Requisitos rapidos
+
+1. Instalar skills requeridas:
+
+```bash
+npx skills add anthropics/skills@pdf
+npx skills add anthropics/skills@docx
+npx skills add anthropics/skills@pptx
+npx skills add anthropics/skills@xlsx
+```
+
+2. Configurar `.github/.env` con:
+
+- `CLIENTE`
+- `PROYECTO`
+- `BC_API_TOKEN`
+- `BC_MCP_URL`
+- `TIPO_DOCUMENTO` (opcional)
+
+3. Invocar en Copilot:
+
+```text
+@agent-upload-documents-bc Sube los documentos de la carpeta Docs a la base de conocimiento
+```
+
+---
