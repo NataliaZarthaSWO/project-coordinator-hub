@@ -1,8 +1,8 @@
-# Minuta de reunion EKOM
+# Minuta de reunion IKOM
 
 Muy buenos dias, equipo:
 
-El dia de hoy realizamos la reunion de EKOM del proyecto Gama Leasing Operativo SpA | Modern SecOps, en la cual revisamos el contexto operativo del workshop, los responsables clave, los insumos de gestion y los proximos compromisos para la coordinacion con el cliente.
+El dia de hoy realizamos la reunion de IKOM del proyecto Gama Leasing Operativo SpA | Modern SecOps, en la cual revisamos el contexto operativo del workshop, los responsables clave, los insumos de gestion y los proximos compromisos para la coordinacion con el cliente.
 
 - Proyecto: Gama Leasing Operativo SpA | Modern SecOps
 - Fecha: 2026-04-27
