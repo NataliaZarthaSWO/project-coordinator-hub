@@ -1,9 +1,9 @@
-# Minuta - Kickoff Interno EKOM
+# Minuta - Kickoff Interno IKOM
 
 - **Cliente:** Banco del Estado de Chile
 - **Proyecto:** Copilot + Power Envisioning (M)
 - **Fecha:** 2026-04-28
-- **Tipo de sesión:** Kickoff interno (EKOM)
+- **Tipo de sesión:** Kickoff interno (IKOM)
 - **Contacto cliente:** Carolina Soza (Canales Digitales) — Gerente del proyecto
 - **Participantes internos:**
   - Natalia Zartha
