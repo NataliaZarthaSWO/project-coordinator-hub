@@ -1,6 +1,6 @@
 # Minuta - [Tipo de sesión]
 
-Muy buenos días para todos, muchas gracias por la sesión de hoy. Enviamos el resumen de nuestro IKOM, por favor si hay alguna cosa que falte y se deba corregir, nos hacen saber.
+Muy buenos días para todos, muchas gracias por la sesión de hoy. Enviamos el resumen de nuestra sesión, por favor si hay alguna cosa que falte y se deba corregir, nos hacen saber.
 
 - **Cliente:**
 - **Proyecto:**
@@ -13,10 +13,16 @@ Muy buenos días para todos, muchas gracias por la sesión de hoy. Enviamos el r
 
 ## Temas tratados
 
-### 1.
+### 1. Contexto del proyecto
 -
 
-### 2.
+### 2. Estructura de equipo
+
+| Área | Consultores |
+|---|---|
+|  |  |
+
+### 3. [Tema]
 -
 
 ---
