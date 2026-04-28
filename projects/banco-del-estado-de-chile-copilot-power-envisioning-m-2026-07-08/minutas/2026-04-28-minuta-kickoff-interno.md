@@ -1,5 +1,7 @@
 # Minuta - Kickoff Interno IKOM
 
+Muy buenos días para todos, muchas gracias por la sesión de hoy. Enviamos el resumen de nuestro IKOM, por favor si hay alguna cosa que falte y se deba corregir, nos hacen saber.
+
 - **Cliente:** Banco del Estado de Chile
 - **Proyecto:** Copilot + Power Envisioning (M)
 - **Fecha:** 2026-04-28
