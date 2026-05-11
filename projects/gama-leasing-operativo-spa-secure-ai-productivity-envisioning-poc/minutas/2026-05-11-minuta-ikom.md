@@ -11,7 +11,7 @@
 - Enviar correo semanal ejecutivo de seguimiento del proyecto.
 - Mantener al menos 2 sesiones semanales de 1 hora.
 - Franja propuesta de William: 9:00-10:00 (CO), martes, miércoles y jueves.
-- Solicitar licencia E3 (responsable: Juan Agudelo).
+- Licencia E3 gestionada por Juan Agudelo.
 - Revisar project plan con el asesor.
 
 ## Riesgo principal
@@ -24,7 +24,7 @@
 |---|---|---|
 | Enviar correo ejecutivo semanal | PM / PC | Semanal |
 | Confirmar agenda final con cliente y William | PC | [Placeholder] |
-| Solicitar y hacer seguimiento a licencia E3 | Juan Agudelo / PM | [Placeholder] |
+| Licencia E3 solicitada y habilitada | Juan Agudelo / PM | 2026-05-11 (realizado) |
 | Revisar project plan con asesor | PM / PC | 2026-05-11 (realizado) |
 
 ## Entregables del workshop
