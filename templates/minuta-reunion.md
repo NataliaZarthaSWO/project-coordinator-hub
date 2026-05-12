@@ -1,36 +1,52 @@
-# Minuta - [Tipo de sesión]
+## Minuta de Reunión: [Nombre de la reunión]
 
-Muy buenos días para todos, muchas gracias por la sesión de hoy. Enviamos el resumen de nuestra sesión, por favor si hay alguna cosa que falte y se deba corregir, nos hacen saber.
+- Proyecto: [Nombre del proyecto]
+- Fecha: [YYYY-MM-DD]
+- Modalidad de trabajo: [Remoto/Presencial/Híbrido]
+- Consultor SoftwareOne: [Nombre]
+- Cliente: [Nombre]
+- Asistentes:
+	- [Nombre, rol]
+	- [Nombre, rol]
+	- [Nombre, rol]
 
-- **Cliente:**
-- **Proyecto:**
-- **Fecha:**
-- **Tipo de sesión:**
-- **Contacto cliente:**
-- **Participantes:**
+### Resumen de la sesión
 
----
+[Escribir aquí un resumen breve de la sesión, objetivos tratados y conclusiones principales.]
 
-## Temas tratados
+### Fases del workshop
 
-### 1. Contexto del proyecto
--
+#### Evaluación
 
-### 2. Estructura de equipo
+[Definir el alcance, identificar a las partes interesadas y recopilar información relevante.]
 
-| Área | Consultores |
-|---|---|
-|  |  |
+#### El arte de lo posible
 
-### 3. [Tema]
--
+[Describir las capacidades revisadas y las soluciones exploradas durante la sesión.]
 
----
+#### Construye el plan
 
-## Próximos pasos
+[Indicar el valor empresarial, la hoja de ruta y los próximos pasos acordados.]
 
-- [ ] Acción | Responsable | Fecha
+### Acuerdos
 
----
+- [Acuerdo 1]
+- [Acuerdo 2]
+- [Acuerdo 3]
 
-Quedo atenta a cualquier comentario o ajuste.
+### Requisitos y validaciones
+
+- [Requisito o validación 1]
+- [Requisito o validación 2]
+- [Requisito o validación 3]
+
+### Riesgos
+
+- [Riesgo 1]
+- [Riesgo 2]
+
+### Próximos pasos
+
+- [ ] [Acción 1]
+- [ ] [Acción 2]
+- [ ] [Acción 3]
