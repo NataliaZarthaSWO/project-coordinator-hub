@@ -15,3 +15,7 @@ Ejemplo:
 - Gama Leasing Operativo SpA | Modern SecOps | inicio 2026-07-08 | CL-PRJ-500706 
 - Banco del Estado de Chile | Copilot + Power Envisioning (M) | inicio 2026-07-08
 - Gama Leasing Operativo SpA | Secure AI Productivity Envisioning & PoC (S) | inicio 2026-05-04 | CL-PRJ-500708
+- Caja Municipal de Ahorro y Credito de Trujillo S.A. | Advisory Gob Power Platform #2
+- Caja Municipal de Ahorro y Credito de Trujillo | Practicas recomendadas y advisory de Power Platform CS
+- Caja Municipal de Ahorro y Credito de Trujillo S.A. | Practicas recomendadas y advisory de Power Platform - CS
+- Caja Municipal de Ahorro y Credito de Trujillo | Advisory Gob Power Platform DWP
